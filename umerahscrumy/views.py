@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from . import models
-
+import random
 # Create your views here.
 
 from django.http import HttpResponse  
