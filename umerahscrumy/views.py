@@ -41,7 +41,7 @@ def add_goal(request):
     return HttpResponse("ok") 
    
 def home(request):
-    goals = models.ScrumyGoal.objects.filter(goal_name = "Keep Learning Django")
+    goals = models.ScrumyGoals.objects.filter(goal_name = "Keep Learning Django")
     output = ', '.join([eachgoal.goal_name for eachgoal in goals]) 
     
     return HttpResponse(output) 
