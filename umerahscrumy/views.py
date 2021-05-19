@@ -45,4 +45,4 @@ def home(request):
     output = ', '.join([eachgoal.goal_name for eachgoal in goals]) 
     goals = models.ScrumyGoals.objects.get(goal_name = "Learn Django")
     dictionary = {"goal_name":goals.goal_name, "goal_id":goals.goal_id, "user": goals.user}
-    return render(request, 'usernamescrumy/home.html', dictionary)
+    return render(request, 'umerahscrumy/home.html', dictionary)
