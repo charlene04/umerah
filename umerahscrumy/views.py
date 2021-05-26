@@ -29,7 +29,7 @@ def index(request):
             return HttpResponse('YOUR ACCOUNT HAS BEEN CREATED SUCCESSFULLY')
     else: 
         formView = form.SignupForm()
-        return render(request, 'charlesscrumy/index.html', {'form': formView})
+        return render(request, 'umerahscrumy/index.html', {'form': formView})
 
 
 
