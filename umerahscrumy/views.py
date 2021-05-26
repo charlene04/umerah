@@ -46,8 +46,10 @@ def add_goal(request):
     return HttpResponse("ok") 
    
 def home(request):
-    goals = models.ScrumyGoals.objects.filter(goal_name = "Keep Learning Django")
-    output = ', '.join([eachgoal.goal_name for eachgoal in goals]) 
-    goals = models.ScrumyGoals.objects.get(goal_name = "Learn Django")
-    dictionary = {"goal_name":goals.goal_name, "goal_id":goals.goal_id, "user": goals.user}
-    return render(request, 'umerahscrumy/home.html', dictionary)
+    context = {'users': User.objects.all(), 
+                'weeklyGoals': models.ScrumyGoals.objects.filter(goal_status = models.GoalStatus.objects.get(status_name = "Weekly Goal")),
+                'dailyGoals': models.ScrumyGoals.objects.filter(goal_status = models.GoalStatus.objects.get(status_name = "Daily Goal")),
+                'verifyGoals': models.ScrumyGoals.objects.filter(goal_status = models.GoalStatus.objects.get(status_name = "Verify Goal")),
+                'doneGoals': models.ScrumyGoals.objects.filter(goal_status = models.GoalStatus.objects.get(status_name = "Done Goal"))}
+    
+    return render(request, 'umerahscrumy/home.html', context)
