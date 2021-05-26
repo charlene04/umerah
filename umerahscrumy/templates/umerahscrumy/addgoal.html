@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <title>Add Goal</title>
+</head>
+<body class="ui container">
+    {% if user.is_authenticated %}
+    <br>
+    <div class="field">
+       <h4><i class="icon user"></i>{{user.username}}</h4> 
+    </div>
+    {% endif %}
+    <form method="POST" class="ui form segment">
+        {% csrf_token%}
+        <div class="field">
+            <label for="">Goal</label>
+            <input type="text" name="goal_name" placeholder="Name of goal">
+        </div>
+        <div class="field">
+            <label for="">Created For:</label>
+            <select id="cars" name="user">
+                {% for currentUser in users %}
+              <option value={{currentUser}}>{{currentUser.username}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <input type="submit" value="Submit" class="ui submit button primary">
+    </form>
+    <a href="{% url 'umerahscrumy:home' %}"> Home </a>
+   
+    
+    
+</body>
+</html>
