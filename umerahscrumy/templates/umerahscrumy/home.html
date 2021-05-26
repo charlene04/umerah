@@ -15,13 +15,16 @@
     {% endif %}
     <h2 style="text-align: center;">Scrumy Board</h2>
     <table class="ui table">
-        <tr  >
-            <th style="padding: 12px;">User</th>
-            <th>Weekly Goals</th>
-            <th>Daily Goals</th>
-            <th>Verify Goals</th>
-            <th>Done Goals</th>
-        </tr>
+        <thead  >
+            <tr>
+                <th style="padding: 12px;">User</th>
+                <th>Weekly Goals</th>
+                <th>Daily Goals</th>
+                <th>Verify Goals</th>
+                <th>Done Goals</th>
+            </tr>
+        </thead>
+        <tbody>
         {% for currentUser in users %}
         <tr> 
             <td>{{currentUser.username}}</td>   
@@ -72,6 +75,7 @@
             </td>
         </tr>
         {% endfor %}
+        </tbody>
     </table>
   
 </body>
