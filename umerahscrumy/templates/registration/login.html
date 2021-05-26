@@ -11,17 +11,13 @@
     <h1>{% if form.errors %}Invalid login credentials {% endif %}</h1>
     <form method="POST" class="ui form segment">
         {% csrf_token %}
-        <div class="field">
-            <label for="">Username:</label>
+       
             <input type="text" name="username">
-        </div>
-        <div class="field">
-            <label for="">Password:</label>
+      
             <input type="password" name="password">
-        </div>
-        <div class="field">
+     
             <input type="submit" value="Submit" class="ui submit button primary">
-        </div>   
+   
     </form>
     <a href="{% url 'umerahscrumy:index' %}"> Index page </a>
 </body>
