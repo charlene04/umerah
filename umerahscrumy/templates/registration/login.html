@@ -1,1 +1,28 @@
-<a href="{% url 'umerahscrumy:index' %}">About us</a>
+{% comment %} <a href="{% url 'umerahscrumy:index' %}">About us</a> {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <title>Accounts</title>
+</head>
+<body class="ui container">
+    {% if form.errors %}Invalid login credentials {% endif %}
+    <form method="POST" class="ui form segment">
+        {% csrf_token %}
+        <div class="field">
+            <label for="">Username:</label>
+            <input type="text" name="username">
+        </div>
+        <div class="field">
+            <label for="">Password:</label>
+            <input type="password" name="password">
+        </div>
+        <div class="field">
+            <input type="submit" value="Submit" class="ui submit button primary">
+        </div>   
+    </form>
+    <a href="{% url 'umerahscrumy:index' %}"> Index page </a>
+</body>
+</html>
