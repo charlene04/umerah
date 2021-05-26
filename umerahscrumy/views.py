@@ -17,7 +17,7 @@ def move_goal(request, goal_id):
     try:
         goal = models.ScrumyGoals.objects.get(goal_id = goal_id)
     except Exception as e: 
-        return render(request, 'usernamescrumy/exception.html', {'error': 'A record with that goal id does not exist'}) 
+        return render(request, 'umerahscrumy/exception.html', {'error': 'A record with that goal id does not exist'}) 
     else: 
         return HttpResponse(goal.goal_name) 
 idList = []
