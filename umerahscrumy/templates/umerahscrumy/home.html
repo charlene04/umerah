@@ -30,7 +30,7 @@
                     {% for weekly  in currentUser.maps.all %}
                     {% if weekly in weeklyGoals %}
                     <li style="list-style: none">{{ weekly.goal_name }} : {{ weekly.goal_id }} <br>
-                      <a style="font-size: 11px;" href="{% url 'charlesscrumy:movegoal' weekly.goal_id %} ">Move goal</a>
+                      <!-- <a style="font-size: 11px;" href="{% url 'charlesscrumy:movegoal' weekly.goal_id %} ">Move goal</a> -->
                     </li>
                     {% endif %}
                     {% endfor %}
@@ -41,7 +41,7 @@
                     {% for daily  in currentUser.maps.all %}
                     {% if daily in dailyGoals %}
                     <li style="list-style: none">{{ daily.goal_name }} : {{ daily.goal_id }} <br>
-                       <a style="font-size: 11px;"  href="{% url 'charlesscrumy:movegoal' daily.goal_id %}">Move goal</a>
+                       <!-- <a style="font-size: 11px;"  href="{% url 'charlesscrumy:movegoal' daily.goal_id %}">Move goal</a> -->
                     </li>
                     {% endif %}
                     {% endfor %}
@@ -52,7 +52,7 @@
                     {% for verify  in currentUser.maps.all %}
                     {% if verify  in verifyGoals %}
                     <li style="list-style: none;">{{ verify.goal_name }} : {{ verify.goal_id }} <br>
-                        <a style="font-size: 11px;" href="{% url 'charlesscrumy:movegoal' verify.goal_id %} ">Move goal</a>
+                        <!-- <a style="font-size: 11px;" href="{% url 'charlesscrumy:movegoal' verify.goal_id %} ">Move goal</a> -->
                     </li>
                     {% endif %}
                     {% endfor %}
@@ -63,7 +63,7 @@
                     {% for done  in currentUser.maps.all %}
                     {% if done in doneGoals %}
                     <li style="list-style: none">{{ done.goal_name }} : {{ done.goal_id }} <br>
-                        <a style="font-size: 11px;"  href="{% url 'charlesscrumy:movegoal' done.goal_id %} ">Move goal</a>
+                        <!-- <a style="font-size: 11px;"  href="{% url 'charlesscrumy:movegoal' done.goal_id %} ">Move goal</a> -->
                        
                     </li>
                     {% endif %}
