@@ -18,19 +18,15 @@
     <form method="POST" class="ui form segment">{% csrf_token %}
         {% for field in form%}
         
-            <div class="field">
-                {{field.errors}}
-                {{field.label_tag }}
+         
+              
                 {{ field }}
-                {% if field.help_text %}
-                <sup> {{ field.help_text }}</sup>
-                {% endif %}
+             
             </div>
        
         {% endfor %}
-        <div class="field">
             <button type="submit" class="ui submit button primary">Sign up</button>
-        </div>
+      
         
     </form>
     <a href="{% url 'umerahscrumy:home' %}">Home</a>
