@@ -24,7 +24,7 @@
         </tr>
         {% for currentUser in users %}
         <tr> 
-            <td>{{currentUser.first_name}}</td>   
+            <td>{{currentUser.username}}</td>   
             <td>
                 <ul style="padding: 0;">
                     {% for weekly  in currentUser.maps.all %}
