@@ -14,8 +14,12 @@ def index(request):
 
 
 def move_goal(request, goal_id):
-    goal = models.ScrumyGoals.objects.get(goal_id = goal_id)
-    return HttpResponse(goal.goal_name) 
+    try:
+        goal = models.ScrumyGoals.objects.get(goal_id = goal_id)
+    except Exception as e: 
+        return render(request, 'usernamescrumy/exception.html', {'error': 'A record with that goal id does not exist'}) 
+    else: 
+        return HttpResponse(goal.goal_name) 
 idList = []
 
 def add_goal(request):
